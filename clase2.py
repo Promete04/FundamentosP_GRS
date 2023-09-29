@@ -34,7 +34,13 @@ print(swap(6,5))
 a,b = swap(a,b)
 
 Todo para saber que es mejor a,b=b,a"""
+import math
+def perfect_sqrt(x:int)->int:
+    retval= math.sqrt(x)    
+    iretval= int(retval)
+    return iretval if iretval == retval else None
 
+print(perfect_sqrt(81))
 
 
 
