@@ -1,5 +1,5 @@
-"""import math
-
+import math
+"""
 def abs(x:float) -> float:
     if x>0:
         return x
@@ -33,14 +33,20 @@ print(swap(6,5))
 
 a,b = swap(a,b)
 
-Todo para saber que es mejor a,b=b,a"""
-import math
+Todo para saber que es mejor a,b=b,a
+
 def perfect_sqrt(x:int)->int:
     retval= math.sqrt(x)    
     iretval= int(retval)
     return iretval if iretval == retval else None
 
 print(perfect_sqrt(81))
+"""
+def dice(n):
+    import random
+    return random.randint(1,n)
+print(dice)
+
 
 
 
