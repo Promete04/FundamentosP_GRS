@@ -9,4 +9,4 @@ print(str(g(float(input("Barns\n")) ,10^28))+" metros cuadrados")
 print(str(f(float(input("Metros cuadrados\n")) ,1/(10^28)))+" barns")
 
 
-
+"""arreglalo pedazo de bestia ^ = ** nooooooooo"""

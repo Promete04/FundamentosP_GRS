@@ -45,7 +45,6 @@ print(perfect_sqrt(81))
 def dice(n):
     import random
     return random.randint(1,n)
-print(dice)
 
 
 
