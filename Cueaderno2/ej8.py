@@ -1,3 +1,6 @@
+"""Escribe una función que a partir de las coordenadas 3D de dos puntos en el
+espacio en formato (x, y, z) calcule la distancia que hay entre dichos puntos.
+Prueba tu función."""
 
 x1= float(input("Valor de la x del primer punto?\n")) 
 y1= float(input("Valor de la y del primer punto?\n"))
