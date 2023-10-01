@@ -9,8 +9,9 @@ partir de su presión y temperatura y probémoslo."""
 p=float(input("Presión? (en atmósferas)\n"))
 t=float(input("Temperatura? (en kelvin)\n"))
 n=float(input("Moles de gas?\n"))
+
+
 def v(p:float,t:float,n:float):
     r= 0.082
     return((n*r*t)/p)
 print(str(v(p,t,n))+" litros")
-    

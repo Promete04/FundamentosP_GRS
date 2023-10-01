@@ -1,3 +1,7 @@
+"""Escribe un programa que, a partir de los lados de un rectángulo, calcule su
+área y perímetro y los muestre por pantalla."""
+
+
 base = int(input("Cuantos metros mide la base del rectángulo?\n"))
 altura = int(input("Cuantos  metros mide de altura el rectángulo?\n"))
 

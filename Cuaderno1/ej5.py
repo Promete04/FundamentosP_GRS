@@ -1,3 +1,7 @@
+"""Escribe un programa que dada una hora (expresada en hora, minutos y
+segundos) muestre por pantalla el total de segundos transcurridos desde la
+última medianoche y los que quedan para la siguiente medianoche."""
+
 Hora_actual = [12, 50, 30]  #horas, minutos, segundos 
 
 

@@ -11,6 +11,6 @@ b) ¿Qué se obtiene? ¿Qué hace la operación * con los valores tipo texto?"""
 
 fruta = " ciruela "
 tipo = " claudia "
-print (fruta + tipo)
+print (fruta + tipo) #une las cadenas
 
-print(fruta*3)
+print(fruta*3) #pone tres veces la cadena

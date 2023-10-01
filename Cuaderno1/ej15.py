@@ -1,3 +1,6 @@
+"""Haz un programa que pida al usuario el nombre de las 2 frutas que tengo en
+mi frutero y cree una variable para el frutero y que imprima esta última."""
+
 fruta1 = str(input("Dime una fruta\n"))
 fruta2 = str(input("Dime otra fruta\n"))
 

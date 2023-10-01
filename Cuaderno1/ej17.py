@@ -1,3 +1,7 @@
+"""Explica lo más brevemente posible qué hace la expresión: a=a==False,
+sabiendo que la variable a está inicializada a un valor bool (sea cual sea).
+Explica también qué pasaría si a no hubiera sido previamente inicializado."""
+
 a=False
 
 a=a==False

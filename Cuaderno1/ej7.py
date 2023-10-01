@@ -1,3 +1,13 @@
+"""Python permite convertir elementos de un tipo en otro. Lleva a cabo las
+siguientes conversiones y comenta los resultados:
+texto_numerico = "45"
+int (texto_numerico)
+int ("Hola")
+int (3.99999)
+int(-3.99999)
+float (34)
+int("diez")"""
+
 texto_numerico = "45"          
 print(int (texto_numerico))    # Pasa el número de tipo "str" a "int"
 

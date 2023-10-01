@@ -1,3 +1,10 @@
+""". La temperatura expresada en grados centígrados TC, se puede convertir a
+grados Fahrenheit (TF) mediante la siguiente fórmula:
+TF = 9.0*TC/5.0 + 32.0
+Escribe un programa que utilizando un cierto valor de temperatura en grados
+Fahrenheit, muestre en pantalla la temperatura equivalente en grados
+Centígrados."""
+
 temp_f = float(input("Temperatura en grados Fahrenheit\n"))  #pedrimos la temepratura en fahrenheit
 
 temp_c = float((temp_f-32.0)*5.0/9.0)   #transformamos la temperatura a celsius
