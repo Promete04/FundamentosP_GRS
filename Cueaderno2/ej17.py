@@ -5,7 +5,8 @@ cierto gas se encuentra en condiciones ideales.
 """
 
 #n= float(input("Moles de gas?\n"))    los pongo en comentario para que funcione el ej18
-
+n=None
+v=None  #pongo los nones para que visual no me moleste
 def vol(n:float):
     r = 0.082
     t = 273.15
