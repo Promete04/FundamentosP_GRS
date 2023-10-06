@@ -4,7 +4,7 @@ cierto gas se encuentra en condiciones ideales.
 𝑉 = nRT/P
 """
 
-n= float(input("Moles de gas?\n"))
+#n= float(input("Moles de gas?\n"))    los pongo en comentario para que funcione el ej18
 
 def vol(n:float):
     r = 0.082
@@ -12,6 +12,7 @@ def vol(n:float):
     v_out = r*n*t
     return (v_out)
 
-v= float(input("Volumen del gas? (en litros)\n"))
+# v= float(input("Volumen del gas? (en litros)\n"))
+
 print(v==vol(n))
 
