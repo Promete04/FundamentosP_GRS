@@ -47,8 +47,44 @@ def classify_triangle(a,b,c)-> str:
     else:
         return("Es escaleno")
 print (classify_triangle(a,b,c))
+
+
+print(list(range(10)))
+print(list(range(11)))
+print(list(range(0,30,5)))
+print(list(range(0,10,3)))
+print(list(range(0,-10,-1)))
+
+for i in range(3):
+    print (i)
+
+for i in range(0):
+    print(i)
+
+def par(x:int):
+    return x%2 ==0
+
+acc = 0 
+for i in range(10):
+    if par(i):
+        acc +=i
+print(acc) #acc = acc+i
+
+
+def factorial (n:int) -> int:
+    result = 1
+    for i in range(1, 1+n):
+        result = result * i
+    return result
+print(factorial(5))
 """
 
+import random
+some = 0
+NTRIALS = 10
+NSIDES = 6
 
-
+for i in range(NTRIALS):
+    some= some+random.randint(1,NSIDES)
+print(some/NTRIALS)
 
