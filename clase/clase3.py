@@ -1,5 +1,5 @@
-
-"""booleanos = [False, True]
+"""
+booleanos = [False, True]
 
 # Tabla de verdad de or
 
@@ -20,7 +20,7 @@ for x in booleanos:
         print(x, y, x and y, sep = '\t')
         
 print()
-"""
+
 
 x=10
 if x>10:
@@ -34,5 +34,21 @@ else:   #x <= 10
 
     print(x)
 print(x)
+
+
+a=input("Cuanto mide un lado?\t" )
+b=input("Cuanto mide otro lado?\t " )
+c=input("Cuanto mide el último lado?\t")
+def classify_triangle(a,b,c)-> str:
+    if a == b == c:
+        return("Es equílátero")
+    elif a==b or b==c or c==a:
+        return("Es isósceles")
+    else:
+        return("Es escaleno")
+print (classify_triangle(a,b,c))
+"""
+
+
 
 
