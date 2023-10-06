@@ -13,12 +13,6 @@ pi= math.pi
 
 tipo = input("Que area quieres calcular? (círculo, cuadrado o triángulo)\n")
 
-b= float(input("Introduce la base del {tipo}\n"))
-
-h= float(input("Introduce la altura del triángulo\n"))
-
-r= float(input("Introduce el radio del círculo\n"))
-
 def círculo(r: float) -> float:
     return pi * (r**2)
 
@@ -29,4 +23,17 @@ def areaTriangulo(b: float, h: float) -> float:
 
 def areaCuadrado(b: float) -> float:
     return b**2
+
+
+if tipo== "círculo": 
+    r= float(input(f"Introduce el radio del {tipo}\n"))
+    print(str(círculo(r))+" metros cuadrados")
+elif tipo== "cuadrado":
+    b= float(input(f"Introduce la base del {tipo}\n"))
+    print (str(areaCuadrado(b))+" metros cuadrados")
+else:
+    h= float(input(f"Introduce la altura del {tipo}\n"))
+    b= float(input(f"Introduce la base del {tipo}\n"))
+    print (str(areaTriangulo(b,h))+" metros cuadrados")
+
 
