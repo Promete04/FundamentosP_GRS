@@ -20,3 +20,5 @@ ejercicios 2, 6 y 7.
 
 c. Una tercera bib_geometria que agrupe funciones relacionadas con la
 geometría, por ejemplo las de los ejercicios 5, 8 y 10 (al menos)"""
+
+"""pendiente"""
