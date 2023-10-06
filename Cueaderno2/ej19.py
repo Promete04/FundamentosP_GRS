@@ -4,4 +4,3 @@ presión es mucho más estable que la temperatura. Nota: Este ejercicio
 pretende mostrarte que con la implementación de valores por defecto ya no
 te harían falta los dos ejercicios anteriores. """
 
-"""pendiente"""

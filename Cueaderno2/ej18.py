@@ -5,10 +5,8 @@ invocándolo! Por cierto, que tu nuevo subprograma debería tener tan solo una
 línea de código, tenlo en cuenta. Y no olvides probarlo.
 𝑉 = nRT/P
 """
-n= float(input("Moles del gas?\n"))
+from ej17 import vol
 
-def f(n:float):
-    return(n*0.082*273.15)
+volumen = vol(4)
 
-print(str(f(n))+" litros")
-
+print (f"{volumen} litros")

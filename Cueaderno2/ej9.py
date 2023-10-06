@@ -15,9 +15,53 @@ programando los complejos utilizando como coeficientes (a,b,c y d) valores
 de tipo real.
 """
 
-import math
+# Función para sumar dos números complejos
+def suma_complejos(a, b, c, d):
+    real_part = a + c
+    imag_part = b + d
+    return (real_part, imag_part)
 
-i= math.sqrt(-1)
+# Función para restar dos números complejos
+def resta_complejos(a, b, c, d):
+    real_part = a - c
+    imag_part = b - d
+    return (real_part, imag_part)
 
+# Función para multiplicar dos números complejos
+def multiplicacion_complejos(a, b, c, d):
+    real_part = (a * c) - (b * d)
+    imag_part = (a * d) + (b * c)
+    return (real_part, imag_part)
 
-"""pendiente"""
+# Función para dividir dos números complejos
+def division_complejos(a, b, c, d):
+    if (c == 0 and d == 0):
+        print("El denominador no puede ser cero.")
+    
+    denominador = c**2 + d**2
+    real_part = ((a * c) + (b * d)) / denominador
+    imag_part = ((b * c) - (a * d)) / denominador
+    return (real_part, imag_part)
+
+# Probador para las funciones
+def probar_operaciones():
+    a = float(input("Ingrese la parte real de número complejo A: "))
+    b = float(input("Ingrese la parte imaginaria de número complejo A: "))
+    c = float(input("Ingrese la parte real de número complejo B: "))
+    d = float(input("Ingrese la parte imaginaria de número complejo B: "))
+    
+    resultado_suma = suma_complejos(a, b, c, d)
+    resultado_resta = resta_complejos(a, b, c, d)
+    resultado_multiplicacion = multiplicacion_complejos(a, b, c, d)
+    
+    try:
+        resultado_division = division_complejos(a, b, c, d)
+        print(f"Suma: {resultado_suma}")
+        print(f"Resta: {resultado_resta}")
+        print(f"Multiplicación: {resultado_multiplicacion}")
+        print(f"División: {resultado_division}")
+    except ValueError as e:
+        print(e)
+
+# Ejecutar el probador
+probar_operaciones()
