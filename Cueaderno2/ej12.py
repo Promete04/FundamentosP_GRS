@@ -19,3 +19,8 @@ num=float(input("Número a redondear?\n"))
 def f(num):
     return(round(num*2)/2)
 print(f(num))
+
+print(f(8.89))
+print(f(8.50))
+print(f(8.45))
+print(f(8.24))

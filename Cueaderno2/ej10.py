@@ -8,26 +8,25 @@ necesitas, utiliza como aproximación de П (pi) el valor de que proporciona la
 biblioteca “math” de Python.
 """
 import math
-tipo = input("Que area quieres calcular? (círculo,cuadrado o triángulo)\n")
 
-def datos(tipo:str,b,h,r):
-    if tipo == "cuadrado" or "triángulo":
-        return(float(b=input("Base del {tipo}?\n")))
-        return(float(h=input("Altura del {tipo}?\n")))
-        r=None
-    else:
-        return(float(r=input("Radio del {tipo}")))
-        b=None
-        h=None
-    print(datos(tipo,b,h,r))       
-        
+pi= math.pi
 
-def areas(tipo:str,b:float,r:float,h:float):
-    if tipo == "triángulo": 
-        return ((b*h)/2)
-    else:
-        if tipo == "círculo":
-            return (math.pi*(r**2))
-        else:
-            return (b*h)
-    print(str(areas(b,r,h))+" metros cuadrados")
+tipo = input("Que area quieres calcular? (círculo, cuadrado o triángulo)\n")
+
+b= float(input("Introduce la base del {tipo}\n"))
+
+h= float(input("Introduce la altura del triángulo\n"))
+
+r= float(input("Introduce el radio del círculo\n"))
+
+def círculo(r: float) -> float:
+    return pi * (r**2)
+
+
+def areaTriangulo(b: float, h: float) -> float:
+    return 0.5 * b * h
+
+
+def areaCuadrado(b: float) -> float:
+    return b**2
+
