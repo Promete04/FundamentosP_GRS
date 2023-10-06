@@ -14,7 +14,7 @@ pueden operar como el resto de los tipos.
 anno= int(input("Introduce un año para comprobar si es bisiesto\n"))
 
 def bisiesto(anno):
-    resultado = ("Bisiesto" if (anno % 4 == 0 and anno % 100 != 0) or (anno % 400 == 0) else "No es bisiesto")
+    resultado = ("es bisiesto" if (anno % 4 == 0 and anno % 100 != 0) or (anno % 400 == 0) else "no es bisiesto")
     return resultado
 
-print(f"{anno} es {bisiesto(anno)}")
+print(f"{anno} {bisiesto(anno)}")
