@@ -32,7 +32,7 @@ def get_random_numbers(n,lower,upper):
 def is_inside(x,xs):
     return x in xs
 
-esto no, mejor while.
+#esto no, mejor while.
 
 def is_inside(x,xs):
     found = False
@@ -45,8 +45,22 @@ def is_inside(x,xs):
 numbers = get_random_numbers (10,1,15)
 print (is_inside(12,numbers))
 print(numbers)
+
+
+num_sec = 20
+adivinado = False
+while not adivinado:
+    ...
+
 """
 
+try: 
+    some_integer = int(input("Enter a integer: "))
+except ValueError:
+    print("Thats not a valid number. Try again...")
+print(some_integer)
+
+#No sustituir if con while
 
 
 
