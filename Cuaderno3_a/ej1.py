@@ -6,17 +6,19 @@ comprobar que es posible convertir la entrada a un float)."""
 
 import math
 
-coste= float(input("Coste de la compra"))
+coste= input("Coste de la compra")
 modo_pago= input("Modo de pago? (al contado, tarjeta)")
-
-def precio(coste:float):
-    n=None
-    if coste > 100: 
-        if modo_pago== "al contado":
-            n= (coste*(1-0.05))         
-        else: 
-            n= (coste)*(1-0.02)
-    else:
-        n= (coste)  
-    return(n)      # programación estructurada
- 
+try:
+    float(coste)
+    def precio(coste:float):
+        n=None
+        if coste > 100: 
+            if modo_pago== "al contado":
+                n= (coste*(1-0.05))         
+            else: 
+                n= (coste)*(1-0.02)
+        else:
+            n= (coste)  
+        return(n)      # programación estructurada
+except TypeError:
+    print ("Entrada no válida")

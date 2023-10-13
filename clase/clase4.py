@@ -60,7 +60,7 @@ except ValueError:
     print("Thats not a valid number. Try again...")
 print(some_integer)
 
-#No sustituir if con while
+#No sustituir if con while 0
 
 
 
