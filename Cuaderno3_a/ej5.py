@@ -8,4 +8,23 @@ sea buena idea basarte en el ejercicio resuelto número 1 pero, a diferencia de 
 que se hace allí (se controla la validez con una precondición), asegúrate de que la
 calificación introducida es válida."""
 
+ 
+x= float(input("Introduzca una nota: "))
 
+def clasificar(x:float)-> str:
+    if 0<x<=10:
+        if x >= 8.5:
+            y = "A"
+        elif 6.5<=x<8.5:
+            y= "B"
+        elif 5<= x < 6.5:
+            y= "C"
+        elif 3.5 <= x < 5:
+            y = "D"
+        else: 
+            y = "F"
+    else:
+        y= "Valor no valido"
+    return y
+
+print (clasificar(x))
