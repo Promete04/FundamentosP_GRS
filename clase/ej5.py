@@ -4,8 +4,9 @@ def leer_numero ():
     while not valid and not end:
         try:
             n= input("Dime un numero o FIN\t ")
-            if n == "END":
+            if n == "FIN":
                 end = True
+                valid= True
                 n= None
             else:
                 n = int(n)
