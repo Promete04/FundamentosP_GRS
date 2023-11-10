@@ -1,4 +1,3 @@
-import random
 def encuentra_secuencia(seq,times)-> bool:
     
     ant= seq[0]
@@ -13,4 +12,5 @@ def encuentra_secuencia(seq,times)-> bool:
         siguiente_idx = siguiente_idx+1
     return (siguiente_idx - times, True) if nveces == times else (None, False)
 
-print(encuentra_secuencia([0,5,5,5,6,9,87,5,5,5,4,10],3))
+print(encuentra_secuencia([0,5,5,5,6,9,8,10],4))
+print(encuentra_secuencia([0,5,5,5,6,9,8,10],3))
