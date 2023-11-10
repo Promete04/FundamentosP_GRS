@@ -32,8 +32,10 @@ def add_entry(a: list, name: str, phone:str, overwrite:bool=True)->bool:
         if encontar_telefono(a,name) != None:
             encontrado= False
         else:
-            a.append([name,phone])
-            encontrado= True
+            for i, entry in enumerate(a):
+                if entry[0] == name:
+                    if entry[1]==phone:
+                        encontrado= True
     return encontrado
 
 def delete_entry(a: list, name: str):
@@ -53,7 +55,7 @@ def find(a: list, name: str)-> int:
     """
     pos=-1
     for i, entry in enumerate(a):
-        if entry[0] == name:
+        if entry[1] == name:
             pos = i
     return pos
 
