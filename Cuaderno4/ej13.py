@@ -12,11 +12,12 @@ def num_palabras(texto:str)->str:
     texto= texto.split()
     lista=[]
     for palabra in texto:
-        while palabra != "FIN":
-            if len(palabra) <= 15:
-                lista.append(len(palabra))
-            else:
-                print("La palabra",palabra,"es demasiado larga")
+        if palabra == "FIN":
+            break #lo pongo pq si no me muero
+        if len(palabra) <= 15:
+            lista.append(len(palabra))
+        else:
+            print("La palabra",palabra,"es demasiado larga")
     for i in range(1,16):
         if i in lista:
             print("Palabras longitud",i,":",lista.count(i))
@@ -24,6 +25,6 @@ def num_palabras(texto:str)->str:
             print("Palabras longitud",i,": ninguna")
     return None
 
-texto= "hola que tal estas"
+texto= "hola que tal estas FIN"
 print(num_palabras(texto))
 
