@@ -20,7 +20,3 @@ texto ="SUMAR 45 50 95. AND A B TRUE. MULT 10 20 200. RESTA 20 10 10. "
 print(lista_comandos(texto))
     
     
-    
-
-texto= "SUMAR 45 50 95. AND A B TRUE. MULT 10 20 200. "
-print(lista_comandos)

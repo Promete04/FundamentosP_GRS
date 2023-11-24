@@ -7,11 +7,11 @@ print(len(d))
 print(list(d)) #si la "operas" como lista te da las keys
 
 
-"""Si buscas una el valor asociado auna key y esta no existe te devuelve
+"""Si buscas una el valor asociado a una key y esta no existe te devuelve
 KeyError, para evitarlo utilzar en vez de print(grades["Ana"]), 
 utilizas grades.get(("Ana",None), si no encientra Ana te devuelve None"""
 
-"""lo mismo con del grades["Ana"], grades.pop("Ana",None)"""
+"""lo mismo con del(grades["Ana"]), grades.pop("Ana",None)"""
 
 """grades.uppdate(other_grades)
 grades.clear
