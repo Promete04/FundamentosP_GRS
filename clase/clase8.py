@@ -34,6 +34,16 @@ def to_dict(products:list,prices:list,discounts:list):
         d[products]={"price":prices,"discount":discounts}
     return d
 
+def imprimir_antes(n):
+    if n > 0:
+        print(n)
+        imprimir_antes(n - 1)
 
+def imprimir_despues(n):
+    if n > 0:
+        imprimir_despues(n - 1)
+        print(n)
 
-
+n=10
+imprimir_antes(n)
+imprimir_despues(n)
