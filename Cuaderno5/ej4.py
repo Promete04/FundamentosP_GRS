@@ -16,3 +16,21 @@ def introduce_punto(puntos:dict)->str:
         y= input("Valor de y? ")
         storage(puntos, x, y, num)
 
+puntos, x, y, num= introduce_punto(puntos)
+storage(puntos, x, y, num)
+"""
+def suma(puntos:dict):
+    x= input("que punto quieres sumar? ")
+    y= input("con que punto quieres sumarlo? ")
+    resultado= puntos.get(x) + puntos.get(y)
+    return resultado
+
+def resta(puntos:dict):
+    x= input("que punto quieres restar? ")
+    y= input("con que punto quieres restarlo? ")
+    resultado= puntos.get(x) - puntos.get(y)
+    return resultado
+
+print(suma(puntos))
+print(resta(puntos))
+"""
