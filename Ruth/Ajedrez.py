@@ -17,8 +17,10 @@ def move_pawn(board, current_position, new_position):
         mensaje= "no se puede mover ahi"
     return mensaje
 
-print(move_pawn(board, (0,0), (1,0)))
-print(move_pawn(board, (6,3), (5,3)))
+move_pawn(board, (0,0), (1,0))
+for row in board:
+    print(row)
+move_pawn(board, (6,3), (5,3))
 for row in board:
     print(row)
 
