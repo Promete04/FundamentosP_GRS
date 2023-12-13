@@ -41,3 +41,5 @@ for i in range(160 + 40):
     if i < 160:
         turtle.stamp()
 
+input("Presiona Enter para salir...")
+
