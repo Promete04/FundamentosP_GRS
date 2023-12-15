@@ -9,3 +9,5 @@ def selection_sort(A):
 A = [64, 34, 25, 12, 22, 11, 90]
 selection_sort(A)
 print(A)
+
+

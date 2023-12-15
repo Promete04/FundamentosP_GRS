@@ -10,3 +10,4 @@ arr = [64, 34, 25, 12, 22, 11, 90]
 bubbleSort(arr)
 print(arr)
 
+#mejora poner un while y comprobar que se ha encontrado

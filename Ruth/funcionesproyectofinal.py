@@ -45,7 +45,7 @@ def orden_jugadores():
     return orden
 
 fichas=[]
-def asignar_fichas():
+def asignar_fichas():   #solo selecciona u njugador y se podría hacer aleatorio
     while True:
         ficha1=input(f"{orden[0]}, escriba una letra para la ficha (b o w): ")
         if len(ficha1)>1:

@@ -1,33 +1,24 @@
 
-def partition(array, start, end):
-    pivot = array[start]
-    low = start + 1
-    high = end
+arr = [2,8,7,3,51,58,63,35,68,1,3,8,16,3,8,14,54,13,384,185,31,138]
 
-    while True:
-        while low <= high and array[high] >= pivot:
-            high = high - 1
+def partition(arr:list, low:int, high:int):
+    pivot = arr[high]
+    i = low - 1
+    
+    for j in range(low, high):
+        if arr[j] <= pivot:
+            i+=1
+            arr[j], arr[i] = arr[i], arr[j]
+    arr[i+1], arr[high] = arr[high], arr[i+1]
+    return i+1
 
-        while low <= high and array[low] <= pivot:
-            low = low + 1
+def quickSort(arr:list, low:int, high:int):
+    if low < high:
+        pi = partition(arr, low, high)
+        quickSort(arr, low, pi-1)
+        quickSort(arr, pi+1, high)
 
-        if low <= high:
-            array[low], array[high] = array[high], array[low]
-        else:
-            break
+s = len(arr) - 1
+quickSort(arr, 0, s)
+print(arr)
 
-    array[start], array[high] = array[high], array[start]
-
-    return high
-
-def quick_sort(array, start, end):
-    if start >= end:
-        return
-
-    p = partition(array, start, end)
-    quick_sort(array, start, p-1)
-    quick_sort(array, p+1, end)
-
-array = [64, 34, 25, 12, 22, 11, 90]
-quick_sort(array, 0, len(array) - 1)
-print(array)
