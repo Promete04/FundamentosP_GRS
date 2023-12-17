@@ -19,9 +19,14 @@ def crear_actas()->dict:
     actas={}
     nombre=input("Introduce el nombre del alumno: ")
     while nombre != "STOP":
-        nota1=int(input("Introduce la nota 1: "))
-        nota2=int(input("Introduce la nota 2: "))
-        nota3=int(input("Introduce la nota 3: "))
+        for i in range(3):
+            nota=int(input("Introduce la nota: "))
+            if i==0:
+                nota1=nota
+            elif i==1:
+                nota2=nota
+            elif i==2:
+                nota3=nota
         actas.update({nombre:[nota1,nota2,nota3]})
         nombre=input("Introduce el nombre del alumno: ")
     return actas
