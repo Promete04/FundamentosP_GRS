@@ -26,7 +26,7 @@ def crear_actas()->dict:
                 print("Nota no válida")
                 nota=float(input("Introduce la nota: "))
             notas.append(nota)
-        actas.update({nombre:[notas[0],notas[1],notas[2]]})
+            actas.update({nombre:[notas[0],notas[1],notas[2]]})
         nombre=input("Introduce el nombre del alumno: ")
     return actas
 
