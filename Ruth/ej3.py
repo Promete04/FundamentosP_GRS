@@ -41,6 +41,7 @@ def analizar_puntuaciones(actas:dict)->dict:
 
 
 actas=crear_actas()
+print(actas)
 analisis=analizar_puntuaciones(actas)
 print(analisis)
 
