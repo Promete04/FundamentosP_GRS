@@ -18,16 +18,12 @@ son sus puntuaciones promedio."""
 def crear_actas()->dict:
     actas={}
     nombre=input("Introduce el nombre del alumno: ")
+    notas=[]
     while nombre != "STOP":
         for i in range(3):
             nota=int(input("Introduce la nota: "))
-            if i==0:
-                nota1=nota
-            elif i==1:
-                nota2=nota
-            elif i==2:
-                nota3=nota
-        actas.update({nombre:[nota1,nota2,nota3]})
+            notas.append(nota)
+        actas.update({nombre:[notas[0],notas[1],notas[2]]})
         nombre=input("Introduce el nombre del alumno: ")
     return actas
 
