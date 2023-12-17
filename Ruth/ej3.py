@@ -21,7 +21,10 @@ def crear_actas()->dict:
     notas=[]
     while nombre != "STOP":
         for i in range(3):
-            nota=int(input("Introduce la nota: "))
+            nota=float(input("Introduce la nota: "))
+            if nota<0 or nota>10:
+                print("Nota no válida")
+                nota=float(input("Introduce la nota: "))
             notas.append(nota)
         actas.update({nombre:[notas[0],notas[1],notas[2]]})
         nombre=input("Introduce el nombre del alumno: ")
