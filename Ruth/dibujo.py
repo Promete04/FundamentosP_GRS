@@ -1,7 +1,10 @@
 from turtle import *
+import turtle
 
+turtle.bgcolor("black")
 
 def estrella(longitud):
+    turtle.color("white")
     for i in range(5):
         forward(longitud)
         right(180 - 36)
@@ -9,6 +12,7 @@ def estrella(longitud):
 
 def espiral_estrellas():
     for i in range(72):
+        turtle.color("white")
         # Estrella de 300 de longitud
         estrella(300)
         # Girar 5 grados
