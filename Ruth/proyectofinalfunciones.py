@@ -75,41 +75,12 @@ def imprimir_tablero(tablero):
         print(coordnum)
         
     print("-------------------------")
-    
-# Ejemplo de uso
+# A partir de aqui empieza el juego , empieza el programa de los movimientos
 
-letras= {{"A": tablero[i][0] , "B": tablero[i][1], "C": tablero[i][2], "D":tablero[i][3], "E": tablero[i][4], "F": tablero[i][5], "G": tablero[i][6], "H": tablero[i][7]}for i in tablero}
+"""letras= {{"A": tablero[i][0] , "B": tablero[i][1], "C": tablero[i][2], "D":tablero[i][3], "E": tablero[i][4], "F": tablero[i][5], "G": tablero[i][6], "H": tablero[i][7]}for i in tablero}
+"""
 
-"""def comprobar_movimiento(posicion_actual, posicion_nueva ):    
-    x1, y1 = posicion_actual
-    x2, y2 = posicion_nueva 
-    mensaje= ""
-    if x1>8 or y1 not in letras or x2>8 or y2 not in letras or x1<0 or x2<0:
-        mensaje="Las coordenadas no existen, pruebe otra vez."
-    elif tablero[x2][y2]:
-        mensaje="Ya hay una pieza en esa coordenada, pruebe otra vez."
-    elif not tablero[x1][y1]:
-        mensaje="No hay ninguna pieza en esa posicion, pruebe otra vez"
-    elif not tablero[x2][y2]:
-        x_diff = posicion_nueva[0] - posicion_actual[0]
-        y_diff = posicion_nueva[1] - posicion_actual[1]
-        if x_diff != y_diff:
-            mensaje="No se puede mover en esa dirección."
-        # Check if the piece is a queen and if the move is valid for a queen
-        elif tablero[x1][y1] in ['NQ', 'BQ']:
-            if abs(x_diff) != abs(y_diff):  # Queens can move any number of squares diagonally
-                mensaje="No se puede mover en esa dirección."
-    return mensaje"""
-
-jugadores=establecer_jugadores()
-print(jugadores)
-orden_jugadores()
-tablero = crear_tablero()
-imprimir_tablero(tablero)
-print(jugador1)
-print(jugador2)
-
-def actualizar_tablero(tablero, posicion_actual, posicion_nueva):
+def actualizar_tablero(tablero, posicion_actual, posicion_nueva,situacion):
     x1, y1 = posicion_actual
     x2, y2 = posicion_nueva
     # Comprobar si es un movimiento de captura
@@ -130,16 +101,43 @@ def juego_acabado(tablero):
         for j in range(8):
             if tablero[i][j] == "B":
                 fichas_blancas += 1
-                if puede_moverse(tablero, i, j):
+                if puede_moverse_blancas(tablero):
                     return False
             elif tablero[i][j] == "N":
                 fichas_negras += 1
-                if puede_moverse(tablero, i, j):
+                if puede_moverse_negras(tablero):
                     return False
     if fichas_blancas == 0 or fichas_negras == 0:
         return True
     else:
         return False
+    
+def puede_moverse_blancas(tablero):
+    for i in range(8):
+        for j in range(8):
+            if tablero[i][j] == "B":
+                # Check all possible moves and captures for a white piece
+                for dx, dy in [(-1, -1), (-1, 1)]:
+                    if 0 <= i + dx < 8 and 0 <= j + dy < 8 and tablero[i + dx][j + dy] == ' ':
+                        return True
+                    if 0 <= i + 2*dx < 8 and 0 <= j + 2*dy < 8 and tablero[i + dx][j + dy] == 'N' and tablero[i + 2*dx][j + 2*dy] == ' ':
+                        return True
+    return False
+
+def puede_moverse_negras(tablero):
+    for i in range(8):
+        for j in range(8):
+            if tablero[i][j] == "N":
+                # Check all possible moves and captures for a black piece
+                for dx, dy in [(1, -1), (1, 1)]:
+                    if 0 <= i + dx < 8 and 0 <= j + dy < 8 and tablero[i + dx][j + dy] == ' ':
+                        return True
+                    if 0 <= i + 2*dx < 8 and 0 <= j + 2*dy < 8 and tablero[i + dx][j + dy] == 'B' and tablero[i + 2*dx][j + 2*dy] == ' ':
+                        return True
+    return False 
+
+
+    
 
 def movimiento_gen(tablero):
     posicion_actual=input("Escribe la posicion inicial(numero, letra en mayúscula): ")
@@ -148,10 +146,10 @@ def movimiento_gen(tablero):
     x2, y2 = posicion_nueva
     if abs(x2 - x1) == 2 and abs(y2 - y1) == 2:
         # It's a capture, call the appropriate function
-        return capturar_pieza(tablero, posicion_actual, posicion_nueva)
+        return capturar_pieza(tablero, posicion_actual, posicion_nueva,"comer")
     elif abs(x2 - x1) == 1 and abs(y2 - y1) == 1:
         # It's a regular move, call the appropriate function
-        return mover_pieza(tablero, posicion_actual, posicion_nueva)
+        return mover_pieza(tablero, posicion_actual, posicion_nueva,"comer")
     else:
         # It's an invalid move
         return "Movimiento inválido"
@@ -163,14 +161,14 @@ def mover_pieza(tablero, posicion_actual, posicion_nueva):
     #comprobar si moviemiento es valido para blancas
     if tablero[x1][y1] == "B":
         if not tablero[x2][y2]:
-            output= actualizar_tablero(tablero, posicion_actual, posicion_nueva)
+            output= actualizar_tablero(tablero, posicion_actual, posicion_nueva,"mover")
         else:
             output= "No se puede mover ahi, espacio ocupado"
             movimiento_gen(tablero)
     #comprobar si movimiento es valido para negras
     elif tablero[x1][y1] == "N":
         if not tablero[x2][y2]:
-            output= actualizar_tablero(tablero, posicion_actual, posicion_nueva)
+            output= actualizar_tablero(tablero, posicion_actual, posicion_nueva,"mover")
         else:
             output= "No se puede mover ahi, espacio ocupado"
             movimiento_gen(tablero)
@@ -180,8 +178,29 @@ def mover_pieza(tablero, posicion_actual, posicion_nueva):
     return output
 
 def capturar_pieza(tablero, posicion_actual, posicion_nueva):
-    
-
+    x1, y1 = posicion_actual
+    x2, y2 = posicion_nueva
+    output=None
+    #comprobar si movimiento es valido para blancas
+    if tablero[x1][y1] == "B":
+        if not tablero[x2,y2]:
+            if tablero[x2-1][y2-1] == "N" or tablero[x2-1][y2+1] == "N": #comprobar si hay una ficha negra en diagonal 
+                output= actualizar_tablero(tablero, posicion_actual, posicion_nueva)
+        else:
+            output= "No se puede mover ahi, espacio ocupado"
+            movimiento_gen(tablero)
+    #comprobar si movimiento es valido para negras
+    elif tablero[x1][y1] == "N":
+        if not tablero[x2,y2]:
+            if tablero[x2+1][y2+1]=="B" or tablero[x2+1][y2-1]=="B": #comprobar si hay una ficha blanca en diagonal
+                output= actualizar_tablero(tablero, posicion_actual, posicion_nueva)
+        else:
+            output= "No se puede mover ahi, espacio ocupado"
+            movimiento_gen(tablero)
+    else:
+        output= "No hay ninguna pieza en esa posicion"
+        movimiento_gen(tablero)
+    return output
 
 def main():
     jugadores = establecer_jugadores()
